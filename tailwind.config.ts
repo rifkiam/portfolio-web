@@ -8,6 +8,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'ticker-horizontal': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'ticker-vertical-left': {
+          '0%': { transform: 'translateY(100%) rotate(90deg)' },
+          '100%': { transform: 'translateY(-100%) rotate(90deg)' },
+        },
+        'ticker-vertical-right': {
+          '0%': { transform: 'translateY(100%) rotate(90deg)' },
+          '100%': { transform: 'translateY(-100%) rotate(90deg)' },
+        },
+      },
+      animation: {
+        'ticker-horizontal-up': 'ticker-horizontal 10s linear infinite',
+        'ticker-horizontal-down': 'ticker-horizontal 10s linear infinite 2s',
+        'ticker-vertical-left': 'ticker-vertical-left 10s linear infinite',
+        'ticker-vertical-right': 'ticker-vertical-right 10s linear infinite 2s',
+      },
       fontFamily: {
         poppins: ['var(--font-poppins)'],
       },
