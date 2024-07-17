@@ -7,6 +7,7 @@ type CardProps<T extends React.ElementType> = {
     movingText?: boolean;
     mtContent?: string;
     mtPosition?: 'vertical' | 'horizontal';
+    mtIdx?: 0 | 1 | 'both'
     bgColor?: string;
     children: React.ReactNode;
 }
@@ -17,6 +18,7 @@ export default function Card<T extends React.ElementType>({
     movingText = false,
     mtContent,
     mtPosition = 'horizontal',
+    mtIdx,
     bgColor = 'bg-slate-200',
     children
 }: CardProps<T> &
@@ -32,7 +34,7 @@ export default function Card<T extends React.ElementType>({
                 wireframed && "border-2 border-dashed"
             )}
         >
-            {mtContent ? 
+            {mtContent && (mtIdx === 0 || mtIdx === 'both') ? 
                 <Typography
                     className={clsxm(
                         'absolute whitespace-nowrap box-content',
@@ -48,7 +50,7 @@ export default function Card<T extends React.ElementType>({
 
             {children}
 
-            {mtContent ? 
+            {mtContent && (mtIdx === 1 || mtIdx === 'both')? 
                 <Typography
                     className={clsxm(
                         'absolute whitespace-nowrap box-content',

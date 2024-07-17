@@ -1,12 +1,14 @@
 import Card from "@/components/Card";
+import Navbar from "@/components/Navbar";
 import Typography from "@/components/Typography";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center px-24">
+      <Navbar />
       <div
-        className="main-content"
+        className="main-content container"
       >
         <Card
           className="rounded-xl px-12"
